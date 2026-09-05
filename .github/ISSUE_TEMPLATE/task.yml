@@ -53,3 +53,12 @@ body:
       placeholder: 例）6/30まで ／ 急ぎではない
     validations:
       required: false
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: 共有物（ファイル等、必要に応じて）
+      description: 判断に使う資料があれば添付・リンクする。スクリーンショット、シートやドキュメントのURLなど。
+      placeholder: 例）エラー画面のスクリーンショット ／ 対象シートのURL
+    validations:
+      required: false
