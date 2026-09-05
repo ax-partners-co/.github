@@ -1,0 +1,55 @@
+name: タスク起票
+description: タスクを抜け漏れなく起票する
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        困っていること・やりたいことを書けばOK。実装方法までは不要。
+        背景と完了条件は必ず埋めてください（抜けると着手前の確認往復が発生します）。
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要（一言で何をしたいか）
+      placeholder: 例）Uber Eats 梅田店の売上が自動取得できないので直したい
+    validations:
+      required: true
+
+  - type: input
+    id: target_feature
+    attributes:
+      label: 対象機能（どこの機能についてか）
+      description: 既存機能に対するバグ・修正であれば、対象コードのURLを貼る。既存機能の修正でなければ「なし」と記入。
+      placeholder: 例）https://github.com/tomorrowater/saude-private/tree/main/skills/gas （既存修正でなければ「なし」）
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景・なぜやりたいか（困っていること）
+      description: これで何が解決するか／放置すると何が困るか。判断に必要な前提があればここに。
+      placeholder: 例）梅田店だけ4日分の売上が未入力で日次集計が合わない。
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: 完了条件（こうなれば完了）
+      description: どうなったら「終わり」か。どう確認すれば達成とわかるかも書く（チェックボックス推奨）。
+      placeholder: |
+        例）
+        - [ ] 梅田店の Uber 売上が他店と同様に自動取得できる
+        - [ ] 6/21〜24 の4日分を再取得して入力済み
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: 希望時期・期限
+      placeholder: 例）6/30まで ／ 急ぎではない
+    validations:
+      required: false
